@@ -1,0 +1,38 @@
+
+
+body {
+	background: url(images/bg.png) no-repeat #fc0;
+	background-size: cover;
+}
+
+main {
+	max-width: 1080px;
+}
+main {	
+	margin: auto;
+}
+header {
+	display: flex;
+	justify-content: space-between;	
+	align-items: center;
+	margin-top: 40px;
+
+}
+.nav-header,ul,.social {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.nav-header ul li {
+	margin: 15px;
+}
+a {
+	margin: 0 -2px;
+}
+a:hover {
+	text-decoration: none;
+	color: white;
+}
+a {
+	color: white;
+}
