@@ -1,7 +1,7 @@
 
 
 body {
-	background: url(images/bg.png) no-repeat #fff;
+	background: url(images/bg.png) repeat #fff;
 	background-size: cover;
 	overflow-x:hidden;
 	font-size: 90%;
@@ -22,7 +22,7 @@ main {
 }
 
 .contain {
-	padding: 0 105px;
+	max-width: 980px;
 }
 
 	/*--- HEADER ---*/
@@ -53,7 +53,7 @@ a {
 }
 
 hr {
-	margin: -1px -10px -10px -10px;
+	margin: -8px 0;
 	height: 0;
 	border-top:1px solid #373737;
 	border-bottom:1px solid #161616;
@@ -61,6 +61,6 @@ hr {
 }
 
 .layer-63 {
-	margin: -65px 0;
+	margin: -65px -30px;
 }
 
