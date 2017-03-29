@@ -1,7 +1,7 @@
 
 
 body {
-	background: url(images/bg.png) repeat #fff;
+	background: url(img/bg.png) repeat 0 0;
 	background-size: cover;
 	overflow-x:hidden;
 	font-size: 90%;
@@ -14,11 +14,6 @@ a:hover {
 
 a {
 	color: white;
-}
-
-
-main {
-	margin: auto;
 }
 
 .contain {
@@ -61,6 +56,45 @@ hr {
 }
 
 .layer-63 {
-	margin: -65px -30px;
+	margin-right: 35px;
+	margin-left: -35px;
+}
+
+.carousel-indicators {	
+	position: absolute;
+	left: 540px;
+	bottom: 225px;
+}
+.carousel-indicators li{
+	height: 6px;
+	width: 6px;
+	border: none;
+	background: #b9bcc4;
+}
+
+.carousel-indicators .active {	
+	height: 6px;
+	width: 6px;
+	padding-top: -5px;
+	background: #3f4552;
+}
+
+.carousel-control,.carousel {
+	position: relative;
+}
+
+.item img {
+	margin: 20px -20px -20px 20px;
+	padding-bottom: 20px;
+}
+.carousel-control img[src="img/gallery/left.png"]{
+	position: absolute;
+	left: 0px;
+	bottom: 80px;
+}
+.carousel-control img[src="img/gallery/right.png"]{
+	position: absolute;
+	left: 1035px;
+	bottom: 80px;
 }
 
