@@ -61,9 +61,7 @@ hr {
 }
 
 .carousel-indicators {	
-	position: absolute;
-	left: 540px;
-	bottom: 225px;
+	margin: auto;
 }
 .carousel-indicators li{
 	height: 6px;
@@ -79,22 +77,24 @@ hr {
 	background: #3f4552;
 }
 
-.carousel-control,.carousel {
-	position: relative;
-}
-
 .item img {
 	margin: 20px -20px -20px 20px;
 	padding-bottom: 20px;
 }
-.carousel-control img[src="img/gallery/left.png"]{
-	position: absolute;
-	left: 0px;
-	bottom: 80px;
+// .carousel-control img[src="img/gallery/left.png"]{
+// 	position: absolute;
+// 	left: 0px;
+// 	bottom: 80px;
+// }
+// .carousel-control img[src="img/gallery/right.png"]{
+// 	position: absolute;
+// 	left: 1035px;
+// 	bottom: 80px;
+// }
+.gallery {
+	display: flex;
+
 }
-.carousel-control img[src="img/gallery/right.png"]{
-	position: absolute;
-	left: 1035px;
-	bottom: 80px;
-}
+
+
 
