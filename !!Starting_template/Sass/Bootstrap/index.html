@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,53 +20,60 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
 
 
         <!-- HEADER -->
         <header class="header">
-          <div class="header-top">
+          <div class="container">
+            <div class="row">
 
-            <div class="logo">
-              <a href="#"><img src="img/logo.png" alt="logo">logo</a>
-            </div>
+              <div class="header-top">
 
-            <form class="form-inline search-form">
-              <div class="form-group search-form__content">
-                <label class="sr-only" for="exampleSearch">Поиск по сайту</label>
-                <input type="search" class="form-control search-form__input" id="exampleSearch" placeholder="Поиск по сайту">
-                <button type="submit" class="btn btn-default search-form__button">Найти</button>
-              </div>
-            </form>
+                <div class="logo">
+                  <a href="#"><img src="img/logo.png" alt="logo">logo</a>
+                </div>
 
-            <address class="address table-bordered">
-              <p>address</p>
-              <span class="circle">address</span>
-              <span class="circle">address</span>
-            </address>
+                <form class="form-inline search-form">
+                  <div class="form-group search-form__content">
+                    <label class="sr-only" for="exampleSearch">Поиск по сайту</label>
+                    <input type="search" class="form-control search-form__input" id="exampleSearch" placeholder="Поиск по сайту">
+                    <button type="submit" class="btn btn-default search-form__button">Найти</button>
+                  </div>
+                </form>
 
-            <ul class="list-lang">
-              <li class="list-lang__item active">
-                <a href="#" class="list-lang__link">Рус</a>
-              </li>
-              <li class="list-lang__item">
-                <a href="#" class="list-lang__link">Англ</a>
-              </li>
-            </ul>
+                <address class="address table-bordered">
+                  <p>address</p>
+                  <span class="circle">address</span>
+                  <span class="circle">address</span>
+                </address>
 
-            <div class="phone">
-              <p class="phone__text">+7 (812) <strong>430-31-14</strong></p>
-              <a href="#" class="phone__link">Обратный звонок</a>
-            </div>
+                <ul class="list-lang">
+                  <li class="list-lang__item active">
+                    <a href="#" class="list-lang__link">Рус</a>
+                  </li>
+                  <li class="list-lang__item">
+                    <a href="#" class="list-lang__link">Англ</a>
+                  </li>
+                </ul>
 
-          </div><!-- /.header-top -->
+                <div class="phone">
+                  <p class="phone__text">+7 (812) <strong>430-31-14</strong></p>
+                  <a href="#" class="phone__link">Обратный звонок</a>
+                </div>
 
+              </div><!-- /.header-top -->
+
+            </div><!-- /row -->
+          </div><!--/container-->
         </header>
         <!-- HEADER END-->
 
         <!-- CONTENT -->
         <main class="content">
+          <div class="container">
+            <div class="row">
 
           <form class="form-inline">
             <div class="form-group">
@@ -113,22 +120,28 @@
               </div>
             </div>
           </form>
-          
+
+            </div><!-- /row -->
+          </div><!--/container-->
         </main>
         <!-- CONTENT END-->
 
         <!-- FOOTER -->
         <footer>
           <div class="container">
+            <div class="row">
+
             <p class="copyright">copyright</p>
-          </div><!-- /.container -->
+            
+            </div><!-- /row -->
+          </div><!--/container-->
         </footer>
         <!-- FOOTER END-->
 
       </div><!-- /row -->
     </div><!--/container-->
 
-    <a href="#" class="btn btn-primary btn-lg up-button" role="button" title="Вверх">
+    <a href="#" class="btn btn-primary up-button" role="button" title="Подняться вверх">
       <div class="glyphicon glyphicon-chevron-up"></div>
       <div class="glyphicon glyphicon-chevron-up"></div>
       <div class="glyphicon glyphicon-chevron-up"></div>
