@@ -1,16 +1,25 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
 <html lang="ru">
+<!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Lorem ipsum dolor.</title>
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="font-awesome.min.css">
-  <link rel="stylesheet" href="bootstrap3/bootstrap.min.css">
-  <link href="" rel="stylesheet">
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="libs/font-awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css" />
+  <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.css" />
+  <link rel="stylesheet" href="libs/countdown/jquery.countdown.css" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/screen.css"/>
+  <link rel="stylesheet" href="css/media.css" />
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,139 +29,106 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row">
 
+    <div id="wrapper">
 
-        <!-- HEADER -->
-        <header class="header">
-          <div class="container">
-            <div class="row">
+      <header id="header"><!-- HEADER ============= -->
+        <div class="container">
+          <div class="row">
 
-              <div class="header-top">
+MY-header-top_h-panel
 
-                <div class="logo">
-                  <a href="#"><img src="img/logo.png" alt="logo">logo</a>
-                </div>
+          </div><!-- row -->
+        </div><!-- container -->
 
-                <form class="form-inline search-form">
-                  <div class="form-group search-form__content">
-                    <label class="sr-only" for="exampleSearch">Поиск по сайту</label>
-                    <input type="search" class="form-control search-form__input" id="exampleSearch" placeholder="Поиск по сайту">
-                    <button type="submit" class="btn btn-default search-form__button">Найти</button>
-                  </div>
-                </form>
+MY-header-bottom
 
-                <address class="address table-bordered">
-                  <p>address</p>
-                  <span class="circle">address</span>
-                  <span class="circle">address</span>
-                </address>
+      </header><!-- HEADER END ============ -->      
+      <div class="panel"><!-- MAIN ============= -->
+        <div class="container">
+          <div class="row">
+          
+          <!-- Выпадающее меню -->
+          MYmenu-dropdown
 
-                <ul class="list-lang">
-                  <li class="list-lang__item active">
-                    <a href="#" class="list-lang__link">Рус</a>
-                  </li>
-                  <li class="list-lang__item">
-                    <a href="#" class="list-lang__link">Англ</a>
-                  </li>
-                </ul>
+          <a href="#" class="btn btn-basket pull-right"><i class="ic-basket"></i><span class="hidden-xss">Корзина</span></a>
 
-                <div class="phone">
-                  <p class="phone__text">+7 (812) <strong>430-31-14</strong></p>
-                  <a href="#" class="phone__link">Обратный звонок</a>
-                </div>
+          </div><!-- row -->
+        </div><!-- container -->
+      </div><!-- panel -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="sorting"><!-- Сортировка -->
 
-              </div><!-- /.header-top -->
+              MYpanel-sorting
 
-            </div><!-- /row -->
-          </div><!--/container-->
-        </header>
-        <!-- HEADER END-->
+            </div><!-- sorting -->
 
-        <!-- CONTENT -->
-        <main class="content">
-          <div class="container">
-            <div class="row">
+            <h1 class="main-title">Воск моделировочный</h1>
 
-          <form class="form-inline">
-            <div class="form-group">
-              <label class="sr-only" for="exampleInputEmail2">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="exampleInputPassword2">Пароль</label>
-              <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Запомнить меня
-              </label>
-            </div>
-            <button type="submit" class="btn btn-default">Войти</button>
-          </form>
+          </div><!-- col-md-12 -->
+        </div><!-- row -->
+      </div><!-- container -->
+      <div class="container">
+        <div class="row relative">
 
-          <form class="form-horizontal">
-            <div class="form-group">
-              <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
-              <div class="col-xs-6 col-sm-4 col-md-3">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+My-sidebar-dropdown
+                                <!-- MAIN END =============== -->
+        <div class="container"><!-- ПАГИНАЦИЯ ============ -->
+          <div class="row">
+            <div class="col-md-12 content">
+
+My-product-wrap              
+              
+              <div class="text-center">
+                <a href="#" class="btn-more"><i></i>Показать еще 30</a>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="inputPassword3" class="col-sm-4 control-label">Пароль</label>
-              <div class="col-xs-6 col-sm-4 col-md-3">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-6 col-sm-offset-4 col-sm-4 col-md-3">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Запомнить меня
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-6 col-sm-offset-4 col-sm-4 col-md-3">
-                <button type="submit" class="btn btn-default">Войти</button>
-              </div>
-            </div>
-          </form>
 
-            </div><!-- /row -->
-          </div><!--/container-->
-        </main>
-        <!-- CONTENT END-->
+            </div><!-- col-md-12 content -->
+          </div><!-- row -->
+        </div><!-- container --><!-- ПАГИНАЦИЯ END ============ -->
 
-        <!-- FOOTER -->
-        <footer>
-          <div class="container">
-            <div class="row">
+      </div><!-- row -->
+    </div><!-- container -->    
+    <footer id="footer"><!-- FOOTER =============== -->
 
-            <p class="copyright">copyright</p>
-            
-            </div><!-- /row -->
-          </div><!--/container-->
-        </footer>
-        <!-- FOOTER END-->
+MY-footer-subscription
+MY-footer__top
 
-      </div><!-- /row -->
-    </div><!--/container-->
+      <div id="copy">
+        <div class="container">
+          <p class="copy text-center">&copy; Компания «Маркетстом» 2015. Все цены указаны в рублях и являются актуальными</p>
+        </div>
+      </div>
 
-    <a href="#" class="btn btn-primary up-button" role="button" title="Подняться вверх">
-      <div class="glyphicon glyphicon-chevron-up"></div>
-      <div class="glyphicon glyphicon-chevron-up"></div>
-      <div class="glyphicon glyphicon-chevron-up"></div>
-    </a>     
+    </footer><!-- FOOTER END =============== -->
+  </div><!-- wrapper -->
 
+  <a href="#" class="btn btn-primary up-button" role="button" title="Кнопка вверх">
+    <div class="glyphicon glyphicon-chevron-up"></div>
+  </a>
+    <!--[if lt IE 9]>
+    <script src="libs/html5shiv/es5-shim.min.js"></script>
+    <script src="libs/html5shiv/html5shiv.min.js"></script>
+    <script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+    <script src="libs/respond/respond.min.js"></script>
+    <![endif]-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/my.js"></script>
-
+    <script src="js/my.js"></script><script src="libs/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="libs/waypoints/waypoints-1.6.2.min.js"></script>
+    <script src="libs/scrollto/jquery.scrollTo.min.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/countdown/jquery.plugin.js"></script>
+    <script src="libs/countdown/jquery.countdown.min.js"></script>
+    <script src="libs/countdown/jquery.countdown-ru.js"></script>
+    <script src="libs/landing-nav/navigation.js"></script>
+    <script src="js/common.js"></script>
+    <!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
+    <!-- Google Analytics counter --><!-- /Google Analytics counter -->
   </body>
   </html>

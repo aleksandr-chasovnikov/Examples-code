@@ -1,5 +1,5 @@
 
-/* FONTS =================== */
+//=============== FONTS ===================
 
 // +font('ProximaNova', 'ProximaNovaBold')
 //     font-style: normal
@@ -12,26 +12,9 @@
 // +font('ProximaNova', 'ProximaNovaReg')
 //     font-style: normal
 //     font-weight: 400
-/*1. FONTS END =================== */
+//=============== FONTS END ===================
 
-/* ICONS ==================*/
-=ico($icon)
-    background: url('../img/icon-#{$icon}.ico') no-repeat
-    width: 17px
-    height: 17px    
-
-=rotate($rot)
-    transform: rotate($rot+deg)
-    transform-origin: center center
-
-// @each $ic in vk, tw, fb, ok
-//     .icon-#{$ic}
-//         +s(#{$ic})
-//         &:hover
-//             +rotate(45)
-/* ICONS END ===============*/
-
-/* NORMALIZE =============================== */
+//=============== NORMALIZE =====================
 td, form, table
     margin: 0px
     padding: 0px
@@ -41,7 +24,7 @@ html, body, div, span, applet, main, object, iframe, h1, h2, h3, h4, h5, h6, p, 
     border: 0
     font-size: 100%
 
-/* HTML5 display-role reset for older browsers*/
+// HTML5 display-role reset for older browsers
 article, aside, details, main, figcaption, figure, footer, header, hgroup, menu, nav, section
     display: block
 
@@ -113,4 +96,4 @@ input
         -webkit-box-sizing: border-box
         -moz-box-sizing: border-box
         box-sizing: border-box
-/* 2. NORMALIZE END ========================= */
+//=============== NORMALIZE END =========================

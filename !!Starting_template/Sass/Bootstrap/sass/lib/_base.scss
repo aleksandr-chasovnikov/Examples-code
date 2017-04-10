@@ -1,4 +1,4 @@
-// this one just agregates all the libs
+// Порядок следования подключения файлов очень важен
 @import "compass/css3";
 @import "mixins";
 @import "keyframes";
@@ -6,5 +6,15 @@
 @import "sprites";
 @import "images";
 
-// gradients for ie, turn it off to disable svg base64
+// @import common;
+@import "normalize";
+// @import "main";
+//@import "select";
+//@import "bxslider";
+//@import "Slider_slick";
+// @import "fancybox";
+// @import "accord_bs3";
+// @import "adaptive_video";
+
+// Градиенты для ie т.е. выключите его, чтобы отключить svg base64
 //$experimental-support-for-svg: true;

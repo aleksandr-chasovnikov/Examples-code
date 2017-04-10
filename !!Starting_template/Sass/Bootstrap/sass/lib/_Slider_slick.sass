@@ -1,59 +1,41 @@
-/* SLIDER-SLICK =============== */
-.slick-slider 
+//=============== SLIDER-SLICK ===============
+=p-re_di-b
     position: relative
     display: block
-    box-sizing: border-box
-    -webkit-touch-callout: none
-    -webkit-user-select: none
-    -khtml-user-select: none
-    -moz-user-select: none
-    -ms-user-select: none
-    user-select: none
+
+.slick-slider 
+    +p-re_di-b
+    +box
+    +select-none
     -ms-touch-action: pan-y
     touch-action: pan-y
     -webkit-tap-highlight-color: transparent
 
 .slick-list 
-    position: relative
+    +p-re_di-b
     overflow: hidden
-    display: block
     margin: 0
     padding: 0
-
     &:focus 
-        outline: none
-    
-    &.dragging 
+        outline: none    
+    .dragging 
         cursor: pointer
         cursor: hand
     
-.slick-slider .slick-track,
-.slick-slider .slick-list 
-    -webkit-transform: translate3d(0, 0, 0)
-    -moz-transform: translate3d(0, 0, 0)
-    -ms-transform: translate3d(0, 0, 0)
-    -o-transform: translate3d(0, 0, 0)
-    transform: translate3d(0, 0, 0)
-
+.slick-slider .slick-track, .slick-slider .slick-list 
+    +transl(0,0,0)
 
 .slick-track 
-    position: relative
+    +p-re_di-b
     left: 0
     top: 0
-    display: block
-
-    &:before,
-    &:after 
+    &:before, &:after 
         content: ""
         display: table
-    
-
     &:after 
-        clear: both
-    
+        clear: both    
     .slick-loading
-        visibility: hidden
-    
+        visibility: hidden    
 
 .slick-slide
     display: none 
@@ -61,33 +43,23 @@
     height: 100%
     min-height: 1px
     [dir="rtl"]
-        float: right
-    
+        float: right    
     img 
-        display: block
-    
-    &.slick-loading img 
+        display: block    
+    .slick-loading img 
         display: none
-
-    &.dragging img 
+    .dragging img 
         pointer-events: none
-    
-
     .slick-initialized
         display: block
-    
-
     .slick-loading
         visibility: hidden
-    
-
     .slick-vertical
         display: block
         height: auto
-        border: 1px solid transparent
-    
+        border: 1px solid transparent    
 
-.slick-arrow.slick-hidden 
+.slick-arrow .slick-hidden 
     display: none
 
 .slick-arrow
@@ -103,4 +75,4 @@
 
 .slick-next 
     right: 0
-/* SLIDER-SLICK END =============== */
+//=============== SLIDER-SLICK END ===============

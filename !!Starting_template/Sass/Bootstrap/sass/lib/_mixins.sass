@@ -75,7 +75,7 @@
 	left: 50%
 	+translate(-50%,-50%)
 
-//Дочерние элементы (указать им display: inline-block; width)
+//Дочерние элементы (указать им display: inline-block; и width)
 // выравнивание по вертикали
 =vertical
 	text-align: center
@@ -97,13 +97,19 @@
 
 // font-family
 =font($alias, $name)
-	@font-face
+	+font-face
 		font-family: $alias
 		src: url("fonts/" + $name + ".eot")
 		src: url("fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("fonts/" + $name + ".woff2") format("woff2"), url("fonts/" + $name + ".woff") format("woff"), url("fonts/" + $name + ".ttf") format("truetype")
 		font-weight: normal
 		font-style: normal
 
+//Сглаживание шрифта (в основном для Safari)
+=font-smooth($val: antialiased)
+	-webkit-font-smoothing: $val
+	-moz-font-smoothing: $val
+	-ms-font-smoothing: $val
+	-o-font-smoothing: $val
 
 // ROTATE
 =rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0)
@@ -122,6 +128,14 @@
 	-webkit-transition: $what $time $func
 	-ms-transition: $what $time $func
 	transition: $what $time $func
+
+// Перемещение элемента
+=transl($x, $y, $z)	
+	-webkit-transform: translate3d($x, $y, $z)
+	-moz-transform: translate3d($x, $y, $z)
+	-ms-transform: translate3d($x, $y, $z)
+	-o-transform: translate3d($x, $y, $z)
+	transform: translate3d($x, $y, $z)
 
 //Спрятать текст
 =hide-text
@@ -199,13 +213,6 @@
 	-webkit-hyphens: auto
 	-moz-hyphens: auto
 	hyphens: auto
-
-//Сглаживание шрифта (в основном для Safari)
-=font-smooth($val: antialiased)
-	-webkit-font-smoothing: $val
-	-moz-font-smoothing: $val
-	-ms-font-smoothing: $val
-	-o-font-smoothing: $val
 
 //Стилизация выделенного текста
 =selection
@@ -342,19 +349,25 @@
 	-ms-border-radius: $radius
 	border-radius: $radius
 	
-=bx($bxhadow)
-	-webkit-box-shadow: $bxhadow
-	-moz-box-shadow: $bxhadow
-	-ms-box-shadow: $bxhadow
-	-o-box-shadow: $bxhadow
-	box-shadow: $bxhadow
+=bs($box_shadow)
+	-webkit-box-shadow: $box_shadow
+	-moz-box-shadow: $box_shadow
+	-ms-box-shadow: $box_shadow
+	-o-box-shadow: $box_shadow
+	box-shadow: $box_shadow
 
-=tx($text-shadow) 
+=box-shadow
+	+bs
+
+=ts($text-shadow) 
 	-webkit-text-shadow: $text-shadow
 	-moz-text-shadow: $text-shadow
 	-ms-text-shadow: $text-shadow
 	-o-text-shadow: $text-shadow
 	text-shadow: $text-shadow
+
+=text-shadow
+	+ts
 
 =links
 	a
@@ -372,3 +385,7 @@
 	opacity: $trans
 	filter: alpha(opactiy=($trans * 100))
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})"
+
+=p-re_di-b
+	position: relative
+	display: block
