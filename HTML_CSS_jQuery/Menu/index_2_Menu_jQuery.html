@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="">
+
+<style>
+
+/*@import url(style.css);*/
+
+/*basic CSS*/
+html, body {
+	margin: 0;
+	font-size: 16px;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.wrapper {
+	max-width: 1024px;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+/*basic CSS*/
+
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+nav {
+	background: #eee;
+}
+
+nav .wrapper {
+	position: relative;
+}
+
+.menu {
+
+}
+
+.menu li {
+	float: left;
+}
+
+.menu li a {
+	display: inline-block;
+	padding: 10px 15px;
+}
+
+.menuToggle {	
+	padding: 10px 15px;
+	display: none;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+	.menu {
+		display: none;
+		position: absolute;
+		background: #eee;
+	}
+
+	.menu li {
+		float: none;
+	}
+
+	.menuToggle {
+		display: inline-block;
+	}
+}
+
+</style>
+
+</head>
+<body>
+
+	<nav>
+		<div class="wrapper">
+			<div class="menuToggle">Меню</div>
+			<ul class="menu clearfix">
+				<li><a href="">Lorem ipsum.</a></li>
+				<li><a href="">At, laboriosam.</a></li>
+				<li><a href="">Architecto, cumque.</a></li>
+				<li><a href="">Vero, adipisci!</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<section><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, modi.</p></section>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+
+		$(function() {
+
+			$('.menuToggle').on('click', function() {
+
+				$('.menu').slideToggle(300, function() {
+
+					if($(this).css('display') === 'none') {
+						$(this).removeAttr('style');
+					}
+
+				});
+
+			});
+
+		});
+		
+	</script>
+</body>
+</html>
+
+

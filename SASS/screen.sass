@@ -1,0 +1,974 @@
+@charset "UTF-8"
+
+$font_size: 1rem
+$color_bg: #faf8fb
+$color_text: #293237
+$color_input_text: #333
+$color_placeholder: #777
+$text_shadow: 0
+$box_shadow: 0
+
+$color_link: #000
+$color_link-nav: #78828c
+$color_hover: #c62f21
+$color_visit: #C62EB2
+$color_active: #c62f21
+$color_link_bg: #5A768A
+
+
+//=============== My Libraries ===========
+@import lib/base
+//=============== My Libraries END ===========
+
+//=============== ICONS ==================
+.ic
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	background: $icons no-repeat
+
+// @each $i in next, prev
+// 	.ic--#$i
+// 		+s(ic--#$i)
+//=============== ICONS END ===============
+
+//=============== MAIN ====================
+body
+	+bg(url('../img/bg1211.png'), 0, 0, repeat, #eee, cover, fixed)
+
+.clrfix
+	+clr
+
+//=============== MAIN END ====================
+
+//=============== MEDIA-запросы =================
++r(990)
+	font-size: 1rem
+
++r(768)
+	font-size: 1rem
+
++r(320)
+	font-size: 1rem
+//=============== MEDIA-запросы END =================
+
+//=============== HEADER ==================
+
+/* Меню верхнее */
+.h-nav 
+	float: left
+	padding: 10px 0
+
+.h-nav a 
+	position: relative
+	margin-right: 33px
+	font-size: 13px
+	color: #78828C
+
+.h-nav a.active 
+	font-weight: 600
+	color: #FF020A
+
+.h-nav a:last-child 
+	margin-right: 0
+.h-nav a:hover 
+	color: #FF020A
+.h-nav a i 
+	margin-right: 3px
+.h-nav a:hover i
+.ic-time 
+	background-position: 0 -17px
+.ic-user
+	background-position: -17px -17px
+
+.h-nav-center 
+	padding: 10px 30px
+	border-right: 1px solid
+	border-left: 1px solid
+	border-color: #E8ECF2
+
+
+.h-nav-tabs 
+	padding: 10px 25px 10px 10px
+
+.h-nav-tabs a 
+	font-size: 11px
+	text-transform: uppercase
+
+.h-nav-tabs a.active:after,
+.h-nav-tabs a.active:before 
+	position: absolute
+	bottom: -15px
+	left: 50%
+	content: ''
+	display: block
+	height: 0
+	width: 0
+	margin-left: -4px
+	border-left: 7px solid transparent
+	border-right: 7px solid transparent
+	border-bottom: 5px solid #fff
+
+.h-nav-tabs a.active:before 
+	bottom: -13px
+	border-bottom: 5px solid #E8ECF2
+
+
+@media screen and (max-width: 1199px) 
+	.h-nav 
+		padding: 10px
+	.h-nav a 
+		margin-right: 10px 
+		font-size: 12px
+
+
+@media screen and (max-width: 991px) 
+	.h-nav-center 
+		display: none
+	.logo 
+		margin-top: 12px
+	.logo img 
+		max-width: 100% 
+		height: auto
+
+
+@media screen and (max-width: 767px) 
+	.h-nav 
+		padding: 5px
+	.h-nav a 
+		margin-right: 5px 
+		font-size: 11px
+	.h-nav-tabs a.active:after 
+		bottom: -9px
+	.h-nav-tabs a.active:before 
+		bottom: -7px
+
+
+
+@media screen and (max-width: 479px)
+	.h-panel 
+	padding: 0 5px
+
+	/* Нижний header */
+.header-bottom 
+	background: #FFF
+	padding: 40px 0 25px 
+	border-top: 1px solid #E8ECF2
+
+	/* Поиск в шапке*/
+#h-search 
+	position: relative
+	max-width: 524px 
+	margin-top: 12px
+
+#h-search input[type="text"] 
+	height: 45px
+	width: 100%
+	padding: 0 50px 0 20px
+	font-size: 14px
+	color: #78828C
+	border: 2px solid #BDC4C9
+	border-radius: 15px
+
+#h-search input[type="submit"] 
+	position: absolute
+	top: 0
+	right: 0
+	width: 45px
+	height: 100%
+	border: none
+	background: transparent url(../img/h-search.png) no-repeat center
+
+
+.h-search__link 
+	display: none
+	height: 47px
+	border: 1px solid #eee
+	background: transparent url(../img/h-search.png) no-repeat center
+	-webkit-border-radius: 5px
+	border-radius: 5px
+
+
+.h-search_close 
+	display: none
+
+	/* Телефон в шапке */
+.h-phone 
+	float: right 
+	margin-top: 10px
+.h-phone a 
+	display: block
+	padding-left: 30px
+	background: url(../img/phone.png) no-repeat left 10px
+
+.h-phone a:hover span 
+	color: #E30613
+
+.h-phone small 
+	font-size: 11px
+	color: #78828c
+
+.h-phone span 
+	display: block
+	font-weight: 800
+	font-size: 20px
+	color: #464446
+
+
+@media screen and (max-width: 767px) 
+	.header-bottom 
+	padding: 15px 0 20px
+	.h-phone 
+	float: none
+	.h-phone a 
+	padding-left: 0 
+	height: 47px 
+	background-position: center 
+	border: 1px solid #eee 
+	-webkit-border-radius: 5px 
+	border-radius: 5px
+	.h-phone small, .h-phone span 
+	display: none
+
+@media screen and (max-width: 479px)
+	.logo 
+		margin-top: 9px    
+	#h-search 
+		position: fixed
+		top: -90px
+		left: 10px
+		right: 10px
+		z-index: 9999    
+	.h-search__link 
+		display: block
+		margin-right: -15px
+		margin-left: 15px    
+	.h-search_close 
+		position: absolute
+		top: -25px
+		right: 0
+		display: block
+		height: 20px
+		width: 20px
+		font-size: 16px
+		line-height: 18px
+		text-align: center
+		color: #fff
+		background: #333 
+		-webkit-border-radius: 2px
+		border-radius: 2px    
+	.h-phone 
+		margin-top: 0
+
+
+/* dropdown-menu */
+
+.dropdown-menu 
+	left: auto
+	right: 0
+	border-color: #E8ECF2
+	padding: 0
+	margin-top: 20px
+	-webkit-box-shadow: 8px 8px 14px rgba(217,223,231, 0.54)
+	box-shadow: 8px 8px 14px rgba(217,223,231, 0.54)
+
+.dropdown-menu li 
+	border-bottom: 1px solid #E8ECF2
+
+.dropdown-menu li:last-child 
+	border: none
+.dropdown-menu li a 
+	padding: 12px 25px
+	font-weight: 600
+	text-align: center
+
+
+.arrow:after, .arrow:before 
+	position: absolute
+	top: -5px
+	left: 50%
+	content: ''
+	display: block
+	height: 0
+	width: 0
+	margin-left: -4px
+	border-left: 7px solid transparent
+	border-right: 7px solid transparent
+	border-bottom: 5px solid #fff
+
+.arrow:before 
+	top: -6px
+	border-bottom: 5px solid #E8ECF2
+
+@media screen and (max-width: 767px) 
+	.arrow:after, .arrow:before 
+		left: auto
+		right: 15px
+
+	/* Панель */
+.panel 
+	padding: 5px 0
+	background: #FC0209
+
+
+.panel .btn 
+	padding: 13px 20px
+	font-weight: 800
+	font-size: 14px
+	color: #fff
+	text-transform: uppercase
+	border: 1px solid #AC1B1B
+	-webkit-border-radius: 8px
+	-moz-border-radius: 8px
+	-o-border-radius: 8px
+	border-radius: 8px
+
+.panel .btn:hover 
+	-webkit-box-shadow: 2px 2px 4px rgba(100,15,15, 0.44)
+	-moz-box-shadow: 2px 2px 4px rgba(100,15,15, 0.44)
+	-o-box-shadow: 2px 2px 4px rgba(100,15,15, 0.44)
+	box-shadow: 2px 2px 4px rgba(100,15,15, 0.44)
+
+
+
+.panel .btn-menu 
+	position: relative
+	width: 280px
+
+.panel .btn-menu i[class*="ic"] 
+	position: absolute
+	top: 50%    
+
+.panel .btn-menu .ic-list 
+	left: 20px
+	margin-top: -10px
+
+.panel .btn-menu .ic-arrow-down-white 
+	right: 20px
+	margin-top: -8px
+
+.btn-basket 
+	padding-right: 30px !important
+.btn-basket i.ic-basket 
+	position: relative
+	top: -2px
+	margin-right: 15px
+
+.panel-menu-wrap 
+	position: relative
+	float: left
+	margin: 0
+	padding: 0
+	list-style-type: none
+	border: 1px solid #AC1B1B
+	border-right: none
+	background: #DE0205
+	+br(8px)
+
+.panel-menu-wrap li 
+	float: left
+
+.panel-menu-wrap li a 
+	background: #FC0209
+	border: none !important
+
+.panel-menu-wrap li a:after,
+.panel-menu-wrap li a:before 
+	position: absolute
+	top: 0
+	right: -14px
+	z-index: 2
+	content: ''
+	display: block
+	height: 0
+	width: 0
+	border-top: 23px solid transparent
+	border-left: 20px solid #F90209
+	border-bottom: 23px solid transparent
+
+.panel-menu-wrap li a:before 
+	right: -16px
+	border-left: 20px solid #C00B0F
+
+
+
+.panel-menu 
+	position: absolute
+	top: 100%
+	left: 0
+	z-index: 9999
+	width: 280px
+	height: 550px
+	margin: 3px 0 0 0
+	padding: 10px 0 0 0
+	list-style-type: none
+	border: 1px solid #E8ECF2
+	background: #FFF
+	-webkit-border-radius: 5px
+	border-radius: 5px
+	-webkit-box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+	-moz-box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+	-o-box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+	box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+
+.panel-menu ul 
+	position: absolute
+	top: -1px
+	left: 100%
+	display: none
+	width: 100%
+	height: 550px
+	padding: 10px 0 0 0
+	margin: 0 0 0 -5px
+	list-style-type: none
+	border: 1px solid #E8ECF2
+	background: #FFF
+	-webkit-border-radius: 0 5px 5px 0
+	border-radius: 0 5px 5px 0
+	-webkit-box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+	-moz-box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+	-o-box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+	box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+
+
+.panel-menu li:hover ul 
+	display: block
+
+.panel-menu a 
+	display: block
+	padding: 6px 20px 6px 17px
+	font-size: 13px
+	line-height: 18px
+	letter-spacing: -0.5px
+	border-left: 3px solid transparent
+
+.panel-menu li.selected a 
+	border-color: #FF020A
+	font-weight: 600
+	color: #e30613
+
+.panel-menu li.selected a i 
+	background-position: -59px -18px
+
+.panel-menu a i 
+	float: right 
+	margin-top: 4px
+.panel-menu li.divider 
+	margin: 9px 0
+	border-bottom: 1px solid #E8ECF2
+
+
+.panel-menu li.sale a 
+	border-left: none
+	padding-left: 50px
+	background: url(../img/sale.png) no-repeat 20px center
+
+.panel-menu li.close-menu 
+	display: none
+
+.sp 
+	position: relative
+	display: block
+	height: 46px
+	width: 272px
+	padding: 0 20px
+	font-weight: bold
+	font-size: 13px
+	line-height: 46px
+	color: #fff
+	text-align: center
+	background: #DE0205
+	-webkit-border-radius: 0 8px 8px 0
+	border-radius: 0 8px 8px 0
+
+.sp i 
+	position: absolute
+	top: 50%
+	right: 7px
+	margin-top: -8px
+
+.sp:after, .sp:before 
+	position: absolute
+	top: 0
+	right: -14px
+	z-index: 2
+	content: ''
+	display: block
+	height: 0
+	width: 0
+	border-top: 23px solid transparent
+	border-left: 20px solid #DE0205
+	border-bottom: 23px solid transparent
+
+.sp:before 
+	right: -16px
+	border-left: 20px solid #C00B0F
+
+@media screen and (max-width: 1199px) 
+	.panel .btn 
+		padding: 14px 
+		font-size: 13px
+	.btn-basket 
+		padding-right: 14px !important
+	.panel .btn-menu, .panel-menu 
+		width: 260px
+	.sp 
+		width: 255px
+	.panel-menu a 
+		font-size: 12px
+
+
+@media screen and (max-width: 991px) 
+	.panel 
+		padding: 5px 10px
+	.sp 
+		display: none
+
+
+@media screen and (max-width: 767px) 
+	.panel-menu 
+		position: fixed
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		width: auto
+		height: auto
+		margin-top: 0
+		padding-top: 0
+		-webkit-border-radius: 0
+		border-radius: 0
+		overflow-y: auto
+
+	.panel-menu a 
+		padding: 8px 20px 8px 17px
+
+	.panel-menu ul 
+		position: static
+		height: auto
+		width: auto
+		padding: 10px 0
+		border: none
+		border-radius: 0
+		box-shadow: none
+		background: #eee
+
+	.panel-menu ul a 
+		padding-left: 25px 
+	.panel-menu ul ul 
+		background: #ccc
+
+	.panel-menu ul ul a 
+		padding-left: 35px
+
+	.panel-menu li.close-menu 
+		display: block
+	.panel-menu li.close-menu a 
+		background: #555
+		color: #fff
+		font-size: 16px
+		font-weight: bold
+
+@media screen and (max-width: 479px) 
+	.panel .btn-menu 
+		width: auto
+		padding: 14px 41px 14px 50px
+
+	.btn-basket i.ic-basket 
+		margin-right: 0
+//=============== HEADER END ==================
+
+//=============== CONTENT ==================
+
+/* Каталог товаров */
+
+.product-wrap 
+	border: 1px solid #dcdcdc
+	background: #FFF
+	-webkit-border-radius: 10px
+	border-radius: 10px
+
+
+.product 
+	height: 400px
+	padding: 20px 20px 25px
+	border-right: 1px solid #E8ECF2
+	border-bottom: 1px solid #E8ECF2
+
+.product:hover 
+	-webkit-box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+	-moz-box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+	-o-box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+	box-shadow: 4px 8px 10px rgba(217,223,231, 0.6)
+
+.product:nth-child(3n) 
+	border-right: none
+
+.product-img 
+	position: relative
+	text-align: center
+	height: 240px
+	margin-bottom: 15px
+	border-bottom: 1px solid #E8ECF2
+
+.product-img img 
+	display: inline-block
+	height: auto
+	max-width: 100%
+
+.product-footer 
+	height: 75px
+
+.product-footer h5 
+	margin: 0
+	font-size: 14px
+	line-height: 18px
+
+.product-footer h5 a 
+	font-weight: 600
+
+
+.cat 
+	font-size: 13px
+	color: #78828c
+
+
+.price 
+	font-weight: 900
+	font-size: 14px
+	color: #E30613
+
+
+.review 
+	display: none
+	position: absolute
+	top: 50%
+	left: 50%
+	z-index: 2
+	width: 195px
+	margin: -25px 0 0 -93px
+	padding: 12px 12px 12px 50px
+	color: #fff
+	text-align: left
+	cursor: pointer
+	background: rgba(0,0,0, 0.7) url(../img/occhi.png) no-repeat 15px center
+	-webkit-border-radius: 8px
+	border-radius: 8px
+
+.product-img:hover .review 
+	display: block
+
+
+/* sidebar =====================*/
+.sidebr-item 
+	padding: 20px
+	border-bottom: 1px solid #E8ECF2
+
+
+.sidebar-title 
+	margin: 0 0 15px 0
+	font-weight: 900
+	color: #293237
+	text-transform: uppercase
+
+
+.sidebar-list, .sidebar-list-check 
+	margin: 0
+	padding: 0
+	list-style: none
+
+.sidebar-list li 
+	margin-bottom: 10px
+.sidebar-list li:last-child 
+	margin-bottom: 0
+.sidebar-list a 
+	font-weight: 600
+	font-size: 13px
+
+.sidebar-list a.active 
+	color: #e30613
+
+.bl-x2 li 
+	float: left
+	width: 50%
+
+.more 
+	color: #77818b
+	font-weight: 600
+	font-size: 13px
+
+.plus 
+	position: relative
+	top: -1px
+	display: inline-block
+	vertical-align: middle
+	margin-right: 6px
+	font-weight: 600
+	font-size: 20px
+
+.sl-slider 
+	margin-bottom: 30px
+.sl-slider input[type="text"] 
+	width: 75px
+	height: 32px
+	margin: 0 3px
+	padding: 0 5px
+	border: 1px solid #dcdcdc
+	background-color: #fff
+	-moz-border-radius: 4px
+	-webkit-border-radius: 4px
+	border-radius: 4px
+
+
+.sl-slider label, .sidebar-list-check label 
+	font-weight: 600
+	font-size: 13px
+
+.sidebar-list-check label 
+	margin-bottom: 8px
+
+.main-title 
+	margin: 25px 0 20px
+	color: #293237
+	font: 900 24px/20px "Open Sans", sans-serif
+
+	/* Сортировка товаров */
+.sorting 
+	margin: 20px 0
+	float: right
+
+.sorting label 
+	margin: 0 15px 0 0
+	color: #293237
+	font: 600 13px/20px "Open Sans", sans-serif
+
+.sorting .cusel 
+	width: 160px !important
+	margin-right: 22px
+
+	/* Кнопка показть больше */
+.btn-more 
+	display: inline-block
+	margin: 40px 0 20px
+	padding: 20px 50px
+	color: white
+	font: 600 14px/20px "Open Sans", sans-serif
+	text-transform: uppercase
+	text-align: center
+	background-color: #e30613
+	background-image: linear-gradient(to top, #cb0611 0%, #e30613 100%)
+	border-radius: 7px
+
+.btn-more:visited 
+	color: #fff
+
+.btn-more:hover 
+	color: #fff
+	background: #B20107
+
+.btn-more i 
+	position: relative
+	top: -2px
+	display: inline-block
+	vertical-align: middle
+	margin-right: 12px
+	height: 5px
+	width: 23px
+	background: url(../img/icon-more.png) no-repeat
+
+
+@media screen and (max-width: 991px) 
+	.main-title 
+		padding-left: 10px
+	.sorting 
+		float: none 
+		margin-top: 0
+	.sidebar-toggle 
+		top: -55px
+	.sidebar-wrapper 
+		background: #FFF
+
+
+
+@media screen and (max-width: 479px) 
+	.main-title 
+		font-size: 18px
+//=============== CONTENT END ==================
+
+//=============== FOOTER ==================
+/*  Подписка  */
+.subscription 
+	padding: 22px 0
+	background: #e30613 url(../img/subsc-bg.png) repeat
+
+
+.subscription__title 
+	margin: 0
+	color: #fff
+	font-weight: 900
+	line-height: 20px
+	text-align: right
+
+
+.gift 
+	position: relative
+	top: -3px
+	display: inline-block
+	vertical-align: middle
+	width: 36px
+	height: 44px
+	margin-right: 20px
+	background: url(../img/gift.png) no-repeat
+
+
+.subscription form input[type="text"] 
+	width: 269px
+	height: 44px
+	float: left
+	padding: 0 10px
+	font: 600 13px/20px "Open Sans", sans-serif
+	color: #78828c
+	background-color: white
+	border: 1px solid #e9ecf1
+	-webkit-border-radius: 7px 0 0 7px
+	-moz-border-radius: 7px 0 0 7px
+	border-radius: 7px 0 0 7px
+
+.subscription form input[type="submit"] 
+	width: 121px
+	height: 44px
+	float: left
+	padding: 0 15px
+	font: 600 13px/20px "Open Sans", sans-serif
+	color: #fff
+	border: none
+	background-color: #78828c
+	-webkit-border-radius: 0px 7px 7px 0px
+	-moz-border-radius: 0px 7px 7px 0px
+	border-radius: 0px 7px 7px 0px
+
+
+@media screen and (max-width: 1199px) 
+	.subscription__title 
+		font-size: 16px
+	.subscription form input[type="text"] 
+		width: auto
+		min-width: 210px
+
+
+
+@media screen and (max-width: 991px) 
+	.subscription__title 
+		font-size: 14px
+		text-align: left
+	.gift 
+		margin-right: 10px 
+		float: left
+
+
+@media screen and (max-width: 767px) 
+	.subscription__title  
+		margin-bottom: 15px
+	.gift 
+		float: none
+	.subscription form input[type="text"] 
+		width: 70%
+	.subscription form input[type="submit"] 
+		width: 30%
+
+
+
+@media screen and (max-width: 479px) 
+	.gift 
+		float: left
+	.subscription form input[type="text"] 
+		min-width: auto
+		width: 60%    
+	.subscription form input[type="submit"] 
+		width: 40%
+
+/* Верхний footer */
+.footer__top 
+	padding: 65px 0 45px
+	background: #333
+
+.footer__top .row [class*="col"] 
+	margin-bottom: 30px
+
+.footer__title, .footer__title a, .footer__phone 
+	color: white
+	font-size: 14px
+	font-weight: 700
+	line-height: 20px
+	text-transform: uppercase
+
+.mt-lg 
+	margin-top: 30px
+
+h5.footer__title 
+	font-size: 13px 
+	text-transform: none
+.footer__title a:hover 
+	text-decoration: underline
+
+/* Телефон в футере */
+.footer__phone 
+	font-size: 18px
+
+/* Меню в футере */
+.footer__nav ul li 
+	margin-bottom: 10px
+.footer__nav ul a 
+	color: #919191
+	font-size: 13px
+	font-weight: 400
+
+.footer__nav ul a:hover 
+	text-decoration: underline
+
+/* Социальные сети */
+.social a 
+	display: inline-block
+	vertical-align: middle
+	width: 32px
+	height: 32px
+	background: url(../img/social.png) no-repeat
+
+.social a + a 
+	margin-left: 6px
+.social a.social__link_fb 
+	background-position: 0 0
+.social a.social__link_google 
+	background-position: -32px 0
+.social a.social__link_tw 
+	background-position: -64px 0
+.social a.social__link_vk 
+	background-position: -96px 0
+
+/* Копирайт */
+#copy 
+	padding: 10px 0
+	background: #000
+
+
+.copy 
+	margin-bottom: 0
+	color: rgba(255,255,255, 0.3)
+	font-size: 11px
+	font-weight: 400
+	line-height: 20px
+
+
+@media screen and (max-width: 479px) 
+	.footer__top 
+		text-align: center
+
+/* Ползунок --------------------*/
+// !MY-slider-range-ui-state-CSS   (СНИППЕТ!!!)
+
+// !MY-cusel_Style-select-CSS  (СНИППЕТ!!!)
+
+//=============== FOOTER END ==================
+
+.sddsds
+	+pseudor

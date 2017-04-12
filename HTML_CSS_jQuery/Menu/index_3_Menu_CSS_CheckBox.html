@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+
+/*@import url(style.css);*/
+
+/*basic CSS*/
+html, body {
+	margin: 0;
+	font-size: 16px;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.wrapper {
+	max-width: 1024px;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+/*basic CSS*/
+
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.wrapper {
+	max-width: 1024px;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+
+nav {
+	background: #eee;
+}
+
+nav .wrapper {
+	position: relative;
+}
+
+.menu {
+
+}
+
+.menu li {
+	float: left;
+}
+
+.menu li a {
+	display: inline-block;
+	padding: 10px 15px;
+}
+
+.menuToggle {	
+	padding: 10px 15px;
+	display: none;
+	cursor: pointer;
+}
+
+
+#menuCheck {
+	display: none;
+}	
+
+@media screen and (max-width: 768px) {
+	.menu {
+		display: none;
+		position: absolute;
+		background: #eee;
+	}
+
+	.menu li {
+		float: none;
+	}
+
+	.menuToggle {
+		display: inline-block;
+	}
+
+	#menuCheck:checked + .menu {
+		display: block;
+	}
+
+	#menuCheck:checked {
+		transition: 1s;
+	}
+}
+
+</style>
+
+</head>
+<body>
+	<nav>
+		<div class="wrapper">
+			<label class="menuToggle" for="menuCheck">Меню</label>
+			<input id="menuCheck" type="checkbox">
+			<ul class="menu clearfix">
+				<li><a href="">Lorem ipsum.</a></li>
+				<li><a href="">At, laboriosam.</a></li>
+				<li><a href="">Architecto, cumque.</a></li>
+				<li><a href="">Vero, adipisci!</a></li>
+			</ul>
+		</div>
+	</nav>
+	<section><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, modi.</p></section>
+</body>
+</html>

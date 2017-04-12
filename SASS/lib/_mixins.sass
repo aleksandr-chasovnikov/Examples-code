@@ -1,0 +1,427 @@
+
+
+=bg($img: url('../img/bg.png'), $x: 0, $y: 0, $repeat: no-repeat, $color: #eee, $size: cover, $attach: fixed)
+	background: $img $x $y $repeat $color
+	background-attachment: $attach
+	background-size: $size
+
+// media-запрос по ширине
+=r($width)
+	@media only screen and (max-width: $width+ "px")
+		@content
+
+// media-запрос по высоте
+=rh($height)
+	@media only screen and (max-height: $height + "px")
+		@content
+
+
+// Обрезание текста с 3 точиями. Указать display: block рядом
+=text-overflow
+	overflow: hidden
+	-ms-text-overflow: ellipsis
+	text-overflow: ellipsis
+	white-space: nowrap
+
+=ie
+	*display: inline
+	*zoom: 1
+
+%pseudo
+	position: relative
+	&:before,&:after
+		content: ' '
+		position: absolute
+		top: 0
+		left: 0
+		
+=pseudo
+	@extend %pseudo
+
+//Растянуть на весь блок
+=coverdiv
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+//Растянуть картинку на весь блок и по центру
+=cover
+	background-repeat: no-repeat
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+	background-position: 50% 50%
+
+=size($width: 100%, $height: 100%)
+	-moz-background-size: $width $height
+	-webkit-background-size: $width $height
+	background-size: $width $height
+
+// retina, также доступна как +hdpi
+=retina
+	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+		@content
+
+=box
+	+box-sizing(border-box)
+
+// Центрирование блока по горизонтали и по вертикали
+=vcenter
+	position: absolute
+	top: 50%
+	left: 50%
+	+translate(-50%,-50%)
+
+//Дочерние элементы (указать им display: inline-block; и width)
+// выравнивание по вертикали
+=vertical
+	text-align: center
+	font-size: 0
+	&:before
+		content: ""
+		display: inline-block
+		vertical-align: middle
+		width: 0
+		height: 100%
+
+// Градиент сверху вниз
+=g($color1, $color2)
+	+background-image(linear-gradient($color1, $color2))
+
+// Градиент слева направо
+=gh($color1, $color2)
+	+background-image(linear-gradient(left, $color1, $color2))
+
+// font-family
+=font($alias, $name)
+	+font-face
+		font-family: $alias
+		src: url("fonts/" + $name + ".eot")
+		src: url("fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("fonts/" + $name + ".woff2") format("woff2"), url("fonts/" + $name + ".woff") format("woff"), url("fonts/" + $name + ".ttf") format("truetype")
+		font-weight: normal
+		font-style: normal
+
+//Сглаживание шрифта (в основном для Safari)
+=font-smooth($val: antialiased)
+	-webkit-font-smoothing: $val
+	-moz-font-smoothing: $val
+	-ms-font-smoothing: $val
+	-o-font-smoothing: $val
+
+// ROTATE
+=rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0)
+	-moz-transform: rotate($deg + deg)
+	-o-transform: rotate($deg + deg)
+	-webkit-transform: rotate($deg + deg)
+	-ms-transform: rotate($deg + deg)
+	transform: rotate($deg + deg)
+	filter: progid:DXImageTransform.Microsoft.Matrix(M11=$m11, M12=$m12,M21=$m21, M22=$m22, sizingMethod='auto expand')
+	zoom: 1
+
+// TRANSITION - переход между состояниями (анимация)
+=tr($what, $time: 1s, $func: ease)
+	-moz-transition: $what $time $func
+	-o-transition: $what $time $func
+	-webkit-transition: $what $time $func
+	-ms-transition: $what $time $func
+	transition: $what $time $func
+
+// Перемещение элемента
+=transl($x, $y, $z)	
+	-webkit-transform: translate3d($x, $y, $z)
+	-moz-transform: translate3d($x, $y, $z)
+	-ms-transform: translate3d($x, $y, $z)
+	-o-transform: translate3d($x, $y, $z)
+	transform: translate3d($x, $y, $z)
+
+//Спрятать текст
+=hide-text
+	font: 0/0 a
+	text-shadow: none
+	color: transparent
+
+=hidetext
+	+hide-text
+
+//Дочерние элементы (указать им display: inline-block; width)
+// равномерно занимают весь блок
+=justify
+	text-align: justify
+	line-height: 0
+	font-size: 0
+	text-justify: newspaper
+	zoom: 1
+	text-align-last: justify
+	&:after
+		content: ""
+		display: inline-block
+		width: 100%
+		height: 0px
+		visibility: hidden
+		overflow: hidden
+
+//Очистка от float
+=clr
+	&:after
+		content: " "
+		display: table
+		clear: both
+	*zoom: 1
+
+//Цвет placeholder
+=placeholder-color
+	&:-moz-placeholder,
+	&::-moz-placeholder
+		color: $color_placeholder
+		opacity: 1
+	&::-webkit-input-placeholder
+		color: $color_placeholder
+
+//Указание содержимого placeholder
+=placeholder
+	&:-ms-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&::-webkit-input-placeholder
+		@content
+	&::placeholder
+		@content
+
+//Запрещает выделение на сайте
+=select-none
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+=unselect
+	+select-none
+
+// Разрыв текста (перенос строк добавляется автоматически)
+=word-br
+	-ms-word-break: break-all
+	word-break: break-all
+	word-break: break-word
+	-webkit-hyphens: auto
+	-moz-hyphens: auto
+	hyphens: auto
+
+//Стилизация выделенного текста
+=selection
+	& ::selection
+		@content
+	& ::-moz-selection
+		@content
+
+=sel
+	+selection
+
+//Скролбар
+=scroll
+	&::-webkit-scrollbar
+		@content
+
+//трек скролбара (пространство для ползунка)
+=scroll-track
+	&::-webkit-scrollbar-track
+		@content
+
+//Ползунок
+=scroll-thumb
+	&::-webkit-scrollbar-thumb
+		@content
+
+//Видимая часть трека
+=scroll-track-piece
+	&::-webkit-scrollbar-track-piece
+		@content
+
+//Изменение размеров окна
+=scroll-resizer
+	&::-webkit-resizer
+		@content
+
+//triangle (треугольники через border)
+=triangle($width, $height, $bg, $direction)
+	width: 0px
+	height: 0px
+	border-style: solid
+	@if $direction == t
+		border-width: 0 $width / 2 + px $height + px $width / 2 + px
+		border-color: transparent transparent $bg transparent
+	@if $direction == r
+		border-width: $height / 2 + px 0 $height / 2 + px $width + px
+		border-color: transparent transparent transparent $bg
+	@if $direction == b
+		border-width: $height + px $width / 2 + px 0 $width / 2 + px
+		border-color: $bg transparent transparent transparent
+	@if $direction == l
+		border-width: $height / 2 + px $width + px $height / 2 + px 0
+		border-color: transparent $bg transparent transparent
+	@if $direction == tl
+		border-width: $height + px $width + px 0 0
+		border-color: $bg transparent transparent transparent
+	@if $direction == tr
+		border-width: 0 $width + px $height + px 0
+		border-color: transparent $bg transparent transparent
+	@if $direction == br
+		border-width: 0 0 $height + px $width + px
+		border-color: transparent transparent $bg transparent
+	@if $direction == bl
+		border-width: $height + px 0 0 $width + px
+		border-color: transparent transparent transparent $bg
+// example
+// +arr(500,50, #000, l)
+// +arr(500,50, #000, bl)
+
+//Повернуть
+=rotate($var)
+	-ms-transform: rotate($var+deg)
+	-webkit-transform: rotate($var+deg)
+	transform: rotate($var+deg)
+
+//Размытие изображения
+=blur($var)
+	-webkit-filter: blur($var)
+	filter: blur($var)
+
+//Перевод цветного изображения в черно-белое
+=grayscale($var: 100%)
+	-webkit-filter: grayscale($var)
+
+//Сепия как в Инстаграмм
+=sepia($var: 100%)
+	-webkit-filter: sepia($var)
+
+//Фильтрация изображения:
+//grayscale=100% -черное-белое, sepia - сепия, bright - яркость
+=filter($grayscale: 0%, $sepia: 0%, $bright: 100%, $contrast: 100%)
+	-webkit-filter: grayscale($grayscale)
+	-webkit-filter: sepia($sepia)
+	-webkit-filter: brightness($bright)
+	-webkit-filter: contrast($contrast)
+
+//Масштабирует
+=scale($x, $y)
+	-ms-transform: scale($x, $y)
+	-webkit-transform: scale($x, $y)
+	transform: scale($x, $y)
+
+//стилизация номеров списка ($var = li или dt)
+=counter($var)
+	counter-reset: $var
+	> li, > dt
+		&:before
+			content: counter($var)
+			counter-increment: $var
+			display: inline-block
+			margin: 2px
+			padding-top: 2px
+			vertical-align: middle
+			margin-right: 10px
+			width: 20px
+			height: 20px
+			background: #333
+			color: #fff
+			text-align: center
+			+br(50%)
+
+@function makelongshadow($color)
+	$val: 0px 0px $color
+	@for $i from 1 through 200
+		$val: #{$val}, #{$i}px #{$i}px #{$color}
+	@return $val
+
+=longshadow($color)
+	text-shadow: makelongshadow($color)
+
+=br($radius) 
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius 
+	-ms-border-radius: $radius
+	border-radius: $radius
+	
+=bs($box_shadow)
+	-webkit-box-shadow: $box_shadow
+	-moz-box-shadow: $box_shadow
+	-ms-box-shadow: $box_shadow
+	-o-box-shadow: $box_shadow
+	box-shadow: $box_shadow
+
+=box-shadow
+	+bs
+
+=ts($text-shadow) 
+	-webkit-text-shadow: $text-shadow
+	-moz-text-shadow: $text-shadow
+	-ms-text-shadow: $text-shadow
+	-o-text-shadow: $text-shadow
+	text-shadow: $text-shadow
+
+=text-shadow
+	+ts
+
+=links
+	a
+		color: $color_link
+		&:visited
+			color: $color_visit
+		&:hover
+			color: $color_hover
+		&:active
+			color: $color_active
+			
+=opacity($trans)
+	-moz-opacity: $trans
+	-khtml-opacity: $trans
+	opacity: $trans
+	filter: alpha(opactiy=($trans * 100))
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})"
+
+=p-re_di-b
+	position: relative
+	display: block
+
+=df
+	display: -webkit-box
+	display: -moz-box
+	display: -webkit-flex
+	display: -ms-flexbox
+	display: flex
+=jc
+	-webkit-box-pack: justify
+	-ms-flex-pack: justify
+	-webkit-justify-content: space-between
+	justify-content: space-between
+
+=fdc
+	flex-direction: column
+	-ms-flex-direction: column
+	-webkit-flex-direction: column
+	-webkit-box-direction: normal 
+	-webkit-box-orient: vertical
+
+=fdr
+	flex-direction: row
+	-ms-flex-direction: row 
+	-webkit-flex-direction: row 
+	-webkit-box-direction: normal
+	-webkit-box-orient: horizontal
+
+=align-items
+	-webkit-box-pack: center
+	-ms-flex-pack: center
+	-webkit-justify-content: center
+	justify-content: center
+	-webkit-box-align: center
+	-ms-flex-align: center
+	-webkit-align-items: center
+	align-items: center
