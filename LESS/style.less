@@ -23,17 +23,12 @@
 @color-bg: #A4A4A4;
 @color-active: #414041;
 @color-button: #5A768A;
-@bac: background;
-@fz: font-size;
-@p: position;
-@re: relation;
-@pa: padding;
-@di: display;
+
 .gradient (@line; @grad1; @grad2) {	
-	@{bac}: -webkit-linear-gradient(@line, @grad1, @grad2);
-	@{bac}: -moz-linear-gradient(@line, @grad1, @grad2);
-	@{bac}: -o-linear-gradient(@line, @grad1, @grad2);
-	@{bac}: linear-gradient(@line, @grad1, @grad2);
+	background: -webkit-linear-gradient(@line, @grad1, @grad2);
+	background: -moz-linear-gradient(@line, @grad1, @grad2);
+	background: -o-linear-gradient(@line, @grad1, @grad2);
+	background: linear-gradient(@line, @grad1, @grad2);
 }
 .border-radius (@radius) {
 		-webkit-border-radius: @radius;
