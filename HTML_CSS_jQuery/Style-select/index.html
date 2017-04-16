@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Сайт</title>
+    <link rel="stylesheet" href="css/style.css" />
+	<!-- jQuery library (served from Google) -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<!--  Стилизованый селект -->
+    <script type="text/javascript" src="js/cusel-min-2.5.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			/* select style */
+			var params = {
+				changedEl: "select",
+				visRows: 5,
+				scrollArrows: true
+			}
+			cuSel(params);
+		});
+	</script>
+</head>
+<body>
+	<select >
+		<option value="По дате">По дате</option>
+		<option value="По популярности">По популярности</option>
+		<option value="По рейтингу">По рейтингу</option>
+		<option value="По загрузке">По загрузке</option>
+		<option value="По дате">По дате</option>
+		<option value="По популярности">По популярности</option>
+		<option value="По рейтингу">По рейтингу</option>
+		<option value="По загрузке">По загрузке</option>
+	</select>
+</body>
