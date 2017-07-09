@@ -1,16 +1,20 @@
 <?php
 
-$newName = './upload/' . basename( $_FILES['image']['name'] );
+$name = basename( $_FILES['img']['name'] );
 
-if ( is_uploaded_file( $_FILES['image']['tmp_name'] ) ) {
+$path = implode(DIRECTORY_SEPARATOR, array(__DIR__, 'upload', $name) );
 
-	$res = move_uploaded_file( $_FILES['image']['tmp_name'], $newName );
+if ( is_uploaded_file( $_FILES['img']['tmp_name'] ) ) {
 
-	if ($res) {
-		echo 'Файл заружен!';
-	} else {
-		echo 'Не удалось загрузить файл';
-	}
+    $res = move_uploaded_file( $_FILES['img']['tmp_name'], $path );
+
+    if ($res) {
+        $message = 'Готово!';
+    } else {
+        $message = 'Ошибка! Неудалось переместить файл.';
+    }
+} else {  
+    $message = 'Ошибка! Неудалось загрузить файл. Возможно слишком большой файл.';
 }
 
 ?>
@@ -24,7 +28,8 @@ if ( is_uploaded_file( $_FILES['image']['tmp_name'] ) ) {
     <body>
 
         <form id="form" action="hadler.php" enctype="multipart/form-data">
-            <input type="file" name="image">
+            <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
+            <input type="file" name="imп">
             <input type="submit" value="Загрузить">
         </form>
 
