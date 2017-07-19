@@ -28,6 +28,7 @@ class ImageUpload extends Model
     	//Имя старой картинки для удаления
     	$currentImage = Yii::getAlias('@web') . 'uploads/' . $currentImage;
 
+        //удалить старое изображение
     	$this->deleteCurrentImage($currentImage);
 
     	//Генерируем имя для файла
@@ -44,7 +45,7 @@ class ImageUpload extends Model
      */
     public function deleteCurrentImage($image)
     {
-    	if ( !empty($image) && file_exists($image) )  {
+    	if ( is_file($image) )  {
 
 	    	unlink($image);
     	}

@@ -1,11 +1,11 @@
 <?php
 
 // Получить ссылку на файл json
-define('LINK', 'http://...');
+define('LINK_COURS', 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3');
 
 function get_course ($curr = 'USD')
 {
-	$data = file_get_contents(LINK);
+	$data = file_get_contents(LINK_COURS);
 
 	if(!$data) return false;
 
