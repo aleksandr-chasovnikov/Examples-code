@@ -1,0 +1,50 @@
+<?php 
+
+===================== Одни к одному =============
+
+class User:
+	phone():
+	    hasOne('App\Phone', 'user_id', 'id')
+
+class Phone:
+	user():
+		belongsTo('App\User', 'user_id', 'id')
+
+-------------------------------------------
+		$phone = User::find(1)->phone;
+
+====================== Один ко многим ============
+
+class Post:
+	comments():
+		hasMany('App\Comment', 'post_id', 'id')
+
+class Comment:
+	post():
+		belongsTo('App\User', 'user_id', 'id')
+
+-----------------------------------------------------
+		$comments = App\Post::find(1)->comments;
+
+		foreach ($comments as $comment) {
+		  //
+		}
+
+
+		$comments = App\Post::find(1)->comments()->where('title', 'foo')->first();
+
+		$comment = App\Comment::find(1);
+
+		echo $comment->post->title;
+
+================= Многие ко многим ======================
+
+class User:
+	roles():
+		$this->belongsToMany('App\Role', 'role_user', 'user_id', 'role_id')   // 'role_user' - имя таблицы
+
+class Role:
+	users():
+		$this->belongsToMany('App\User', 'role_user', 'role_id', 'user_id')   // 'role_user' - имя таблицы
+
+	
