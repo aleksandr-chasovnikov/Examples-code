@@ -1,0 +1,19 @@
+// передача данных в модальное окно
+$(..).data('foo', 52);
+
+ .fancybox({
+    beforeLoad: function() {
+      $(..).html( $(...).data('foo'));
+    }
+    content: ...;
+ });
+ 
+ 
+// перезагрузка страницы через ajax (при работе с модальным окном)
+// submit -> указать name
+$('#form').submit({
+  $.ajax({
+    ...
+    success: function() {
+      document.location.reload(true);
+});
