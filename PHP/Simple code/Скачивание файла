@@ -1,0 +1,64 @@
+/**
+ * Теперь мы можем скрыть реальный адрес файла, взять его из папки, 
+ * недоступной для браузеров и программ закачки. 
+ * Недостатком данной функции является полная загрузка всего файла в память, 
+ * что при больших его размерах может привести к ее переполнению
+ */
+function file_download($filename, $mimetype='application/octet-stream') {
+  if (file_exists($filename)) {
+// Отправляем требуемые заголовки
+    header($_SERVER["SERVER_PROTOCOL"] . ' 200 OK');
+// Тип содержимого. Может быть взят из заголовков полученных от клиента
+// при закачке файла на сервер. Может быть получен при помощи расширения PHP Fileinfo.
+    header('Content-Type: ' . $mimetype);
+// Дата последней модификации файла        
+    header('Last-Modified: ' . gmdate('r', filemtime($filename)));
+// Отправляем уникальный идентификатор документа, 
+// значение которого меняется при его изменении. 
+// В нижеприведенном коде вычисление этого заголовка производится так же,
+// как и в программном обеспечении сервера Apache
+    header('ETag: ' . sprintf('%x-%x-%x', fileinode($filename), filesize($filename), filemtime($filename)));
+// Размер файла
+    header('Content-Length: ' . (filesize($filename)));
+    header('Connection: close');
+// Имя файла, как он будет сохранен в браузере или в программе закачки.
+// Без этого заголовка будет использоваться базовое имя скрипта PHP.
+// Но этот заголовок не нужен, если вы используете mod_rewrite для
+// перенаправления запросов к серверу на PHP-скрипт
+    header('Content-Disposition: attachment; filename="' . basename($filename) . '";');
+// Отдаем содержимое файла
+    echo file_get_contents($filename);
+  } else {
+    header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+    header('Status: 404 Not Found');
+  }
+  exit;
+}
+
+/**
+ * Чтобы избежать проблемы в примере выше, можно считывать файл блоками небольшого размера
+ */
+function file_download($filename, $mimetype='application/octet-stream') {
+  if (file_exists($filename)) {
+    header($_SERVER["SERVER_PROTOCOL"] . ' 200 OK');
+    header('Content-Type: ' . $mimetype);
+    header('Last-Modified: ' . gmdate('r', filemtime($filename)));
+    header('ETag: ' . sprintf('%x-%x-%x', fileinode($filename), filesize($filename), filemtime($filename)));
+    header('Content-Length: ' . (filesize($filename)));
+    header('Connection: close');
+    header('Content-Disposition: attachment; filename="' . basename($filename) . '";');
+// Открываем искомый файл
+    $f=fopen($filename, 'r');
+    while(!feof($f)) {
+// Читаем килобайтный блок, отдаем его в вывод и сбрасываем в буфер
+      echo fread($f, 1024);
+      flush();
+    }
+// Закрываем файл
+    fclose($f);
+  } else {
+    header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+    header('Status: 404 Not Found');
+  }
+  exit;
+}
